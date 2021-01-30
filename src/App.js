@@ -1,23 +1,38 @@
-import './App.css';
-import PokemonLandingPage from './PokemonLandingPage';
+import "./App.css";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Redirect,
+  Route,
+} from "react-router-dom";
+
+import Header from "./Header";
+import {
+  PokemonDropdown,
+  PokemonLandingPage,
+  PokemonPage,
+  usePokemon,
+} from "./pokemon";
 
 function App() {
+  const pokemon = usePokemon();
+
   return (
-    <>
-      <header>
-        <nav className="navbar">
-          <a class="navbar-brand" href="#">
-            <img src="" alt="" />
-          </a>
-        </nav>
-      </header>
+    <Router>
+      <Header dropdown={<PokemonDropdown pokemon={pokemon} />} />
       <main>
-        <PokemonLandingPage />
+        <Switch>
+          <Route path="/pokemon/:name">
+            <PokemonPage />
+          </Route>
+          <Route path="/pokemon">
+            <PokemonLandingPage pokemon={pokemon} />
+          </Route>
+          <Redirect from="/" to="/pokemon" />
+        </Switch>
       </main>
-      <footer>
-        Using PokeApi, the RESTful Pokemon API
-      </footer>
-    </>
+    </Router>
   );
 }
 
