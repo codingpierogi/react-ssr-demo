@@ -1,7 +1,10 @@
 import { Dropdown } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { useRouteMatch } from "react-router-dom";
+import { selectAllPokemon } from "./pokemonSlice";
 
-export function PokemonDropdown({ pokemon }) {
+export function PokemonDropdown() {
+  const pokemon = useSelector(selectAllPokemon);
   const match = useRouteMatch("/pokemon/:name");
 
   return (

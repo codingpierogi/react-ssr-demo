@@ -1,6 +1,10 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { selectAllPokemon } from "./pokemonSlice";
 
-export function PokemonLandingPage({ pokemon }) {
+export function PokemonLandingPage() {
+  const pokemon = useSelector(selectAllPokemon);
+
   return (
     <div className="container">
       <div className="row row-cols-4 g-4">

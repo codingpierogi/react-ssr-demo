@@ -1,9 +1,16 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { usePokemonDetail } from "./usePokemon";
+import { fetchPokemonDetail, selectPokemon } from "./pokemonSlice";
 
 export function PokemonPage() {
+  const dispatch = useDispatch();
+  const pokemon = useSelector(selectPokemon);
   const { name } = useParams();
-  const pokemon = usePokemonDetail(name);
+
+  useEffect(() => {
+    dispatch(fetchPokemonDetail(name));
+  }, [name, dispatch]);
 
   if (!pokemon) {
     return null;
