@@ -8,7 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import { fetchPokemon } from "./pokemon";
 
-store.dispatch(fetchPokemon(100));
+store.dispatch(fetchPokemon());
 
 ReactDOM.render(
   <React.StrictMode>

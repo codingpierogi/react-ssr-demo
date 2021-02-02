@@ -11,7 +11,7 @@ const frontDefaultSprite = (id) =>
 
 export const fetchPokemon = createAsyncThunk(
   "pokemon/fetchPokemon",
-  async (limit) => {
+  async (limit = 50) => {
     const response = await fetch(`${basePokeApiUrl}pokemon?limit=${limit}`);
     const { results } = await response.json();
     return results.map((r, i) => ({
