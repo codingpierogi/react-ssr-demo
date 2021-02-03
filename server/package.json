@@ -1,0 +1,8 @@
+{
+  "name": "react-ssr-demo-server",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

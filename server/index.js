@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 
-const build = path.join("./build");
+const build = path.join("../client/build");
 
 const app = express();
 
