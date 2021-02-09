@@ -1,7 +1,6 @@
 import "./App.css";
 
 import {
-  BrowserRouter as Router,
   Switch,
   Redirect,
   Route,
@@ -12,7 +11,7 @@ import { PokemonDropdown, PokemonLandingPage, PokemonPage } from "./pokemon";
 
 function App() {
   return (
-    <Router>
+    <>
       <Header dropdown={<PokemonDropdown />} />
       <main>
         <Switch>
@@ -25,7 +24,7 @@ function App() {
           <Redirect from="/" to="/pokemon" />
         </Switch>
       </main>
-    </Router>
+    </>
   );
 }
 

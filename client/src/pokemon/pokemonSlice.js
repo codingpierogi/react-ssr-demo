@@ -1,5 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { fetchPokemon as fetchPokemonCommon, fetchPokemonDetail as fetchPokemonDetailCommon} from "react-ssr-demo-common";
+import {
+  fetchPokemon as fetchPokemonCommon,
+  fetchPokemonDetail as fetchPokemonDetailCommon,
+} from "react-ssr-demo-common";
 
 const initialState = {
   pokemon: [],
