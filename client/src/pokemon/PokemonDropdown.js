@@ -7,6 +7,10 @@ export function PokemonDropdown() {
   const pokemon = useSelector(selectAllPokemon);
   const match = useRouteMatch("/pokemon/:name");
 
+  if (!pokemon) {
+    return null;
+  }
+
   return (
     <Dropdown>
       <Dropdown.Toggle>Select Pokemon</Dropdown.Toggle>
