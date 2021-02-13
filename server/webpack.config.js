@@ -15,6 +15,10 @@ module.exports = {
   entry: "./index.js",
   resolve: {
     alias: {
+      "@reduxjs/toolkit": path.join(
+        clientNodeModulesDirectory,
+        "@reduxjs/toolkit"
+      ),
       react: path.join(clientNodeModulesDirectory, "react"),
       "react-dom": path.join(clientNodeModulesDirectory, "react-dom"),
       "react-redux": path.join(clientNodeModulesDirectory, "react-redux"),
